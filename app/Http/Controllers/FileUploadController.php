@@ -23,7 +23,7 @@ class FileUploadController extends Controller
         $media = [];
 
         foreach (Media::all() as $value) {
-            array_push($media, asset($value->path . '/' . $value->name));
+            array_push($media, Storage::url($value->path . '/' . $value->name));
         }
 
         return view('welcome', compact('media'));
