@@ -23,5 +23,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::post('file-upload', [FileUploadController::class, 'fileUploadPost'])->name('file.upload.post');
+Route::get('test-cache', [FileUploadController::class, 'testCache']);
 
 require __DIR__.'/auth.php';
