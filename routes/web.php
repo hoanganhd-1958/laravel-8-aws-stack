@@ -24,5 +24,6 @@ Route::get('/dashboard', function () {
 
 Route::post('file-upload', [FileUploadController::class, 'fileUploadPost'])->name('file.upload.post');
 Route::get('test-cache', [FileUploadController::class, 'testCache']);
+Route::get('test-queue', [FileUploadController::class, 'testQueue']);
 
 require __DIR__.'/auth.php';

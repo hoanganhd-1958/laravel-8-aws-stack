@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ProcessPodcast;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -40,5 +41,10 @@ class FileUploadController extends Controller
 
 
         dd($value);
+    }
+
+    public function testQueue()
+    {
+        ProcessPodcast::dispatch();
     }
 }
